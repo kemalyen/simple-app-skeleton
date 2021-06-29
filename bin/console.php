@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-use Teuton\Simple\Models\Article\ArticleRepository;
+use Teuton\Simple\Model\Article\ArticleRepository;
 use Symfony\Component\Console\Output\OutputInterface;
 
 $container = require __DIR__ . '/app/bootstrap.php';

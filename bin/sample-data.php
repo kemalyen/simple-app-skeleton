@@ -2,11 +2,11 @@
 declare(strict_types = 1);
 
 use Doctrine\ORM\EntityManager;
-use Teuton\Simple\Models\Article\Article;
-use Teuton\Simple\Models\Generic\EmailAddress;
-use Teuton\Simple\Models\Generic\PasswordHash;
-use Teuton\Simple\Models\User\Role;
-use Teuton\Simple\Models\User\User;
+use Teuton\Simple\Model\Article\Article;
+use Teuton\Simple\Model\Generic\EmailAddress;
+use Teuton\Simple\Model\Generic\PasswordHash;
+use Teuton\Simple\Model\User\Role;
+use Teuton\Simple\Model\User\User;
 
 chdir(dirname(__DIR__));
 

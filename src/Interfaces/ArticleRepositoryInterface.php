@@ -2,7 +2,7 @@
 
 namespace Teuton\Simple\Interfaces;
 
-use Teuton\Simple\Models\Article;
+use Teuton\Simple\Model\Article;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**

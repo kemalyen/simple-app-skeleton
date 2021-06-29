@@ -30,9 +30,9 @@ return [
         'password' => '$navMin2007',
         'dbname'   => 'simple',
         'types'    => [
-            'emailAddress'      => Teuton\Simple\Models\DBAL\EmailAddressType::class,
-            'passwordHash'      => Teuton\Simple\Models\DBAL\PasswordHashType::class,
-            'role'              => Teuton\Simple\Models\DBAL\RoleType::class,
+            'emailAddress'      => Teuton\Simple\Model\DBAL\EmailAddressType::class,
+            'passwordHash'      => Teuton\Simple\Model\DBAL\PasswordHashType::class,
+            'role'              => Teuton\Simple\Model\DBAL\RoleType::class,
             'uuid'              => \Ramsey\Uuid\Doctrine\UuidType::class,
             'uuid_binary'       => \Ramsey\Uuid\Doctrine\UuidBinaryType::class,
         ]

@@ -33,7 +33,10 @@ if ($_ENV['ENVIRONMENT'] !== 'production') {
 $container = require 'config/container.php';
 
 $dispatcher = FastRoute\cachedDispatcher(function (FastRoute\RouteCollector $r) {
-        $r->addRoute('GET', '/', \Teuton\Simple\Controllers\IndexController::class);
+        $r->addRoute('GET', '/', \Teuton\Simple\Controller\IndexController::class);
+        $r->addRoute(['GET','POST'], '/login', \Teuton\Simple\Controller\IndexController::class);
+        $r->addRoute('GET', '/activate/{token:[A-Za-z0-9\-\.$=]+}', \Teuton\Simple\Controller\User\ActivationController::class);
+        $r->addRoute('GET', '/', \Teuton\Simple\Controller\IndexController::class);
     },
     [
         'cacheFile' => 'storage/cache/routes.php',

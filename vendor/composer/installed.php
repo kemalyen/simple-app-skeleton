@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '00871770b1b1f551d75a265d6bb9ef302595f39d',
     'name' => 'vardumper/simple',
   ),
   'versions' => 
@@ -803,12 +803,12 @@
     ),
     'vardumper/simple' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '00871770b1b1f551d75a265d6bb9ef302595f39d',
     ),
     'vlucas/phpdotenv' => 
     array (

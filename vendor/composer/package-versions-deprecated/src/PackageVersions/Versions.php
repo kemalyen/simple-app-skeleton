@@ -113,7 +113,7 @@ final class Versions
   'pdepend/pdepend' => '2.9.1@1632f0cee84512ffd6dde71e58536b3b06528c41',
   'phpmd/phpmd' => '2.10.1@bd5ef43d1dcaf7272605027c959c1c5ff3761f7a',
   'squizlabs/php_codesniffer' => '3.6.0@ffced0d2c8fa8e6cdc4d695a743271fab6c38625',
-  'vardumper/simple' => '1.0.0+no-version-set@',
+  'vardumper/simple' => 'dev-main@00871770b1b1f551d75a265d6bb9ef302595f39d',
 );
 
     private function __construct()

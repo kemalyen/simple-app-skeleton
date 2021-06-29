@@ -46,7 +46,7 @@ return [
     // Configure Twig
     Environment::class => function () {
         $loader = new FilesystemLoader('templates');
-        return new Environment($loader);
+        return new Environment($loader, ['debug' => true, 'cache' => 'storage/cache/templates/']);
     },
 ];
 

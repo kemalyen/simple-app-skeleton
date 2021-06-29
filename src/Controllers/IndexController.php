@@ -20,6 +20,8 @@ use Doctrine\ORM\EntityManager;
 use Teuton\Simple\Models\Article\Article;
 use Teuton\Simple\Repositories\ArticleRepository;
 use Teuton\Simple\Interfaces\SearchArticlesInterface;
+use Teuton\Simple\Forms\LoginForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class IndexController {
     /**
@@ -54,8 +56,17 @@ class IndexController {
 
     public function __invoke() : Response
     {
+        $form = new LoginForm();
+        $form->populateValues($this->request->request->getIterator());
+        if ($this->request->isMethod('post')) {
+            if ($form->isValid()) {
+                return new RedirectResponse('/private');
+            }
+        }
+        
+        
         $articles = $this->articles->__invoke();
-        $this->response->setContent($this->twig->render('home.twig', ['articles' => $articles]));
+        $this->response->setContent($this->twig->render('home.twig', ['articles' => $articles, 'form' => $form]));
         return $this->response;
     }
 }

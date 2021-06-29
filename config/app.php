@@ -37,7 +37,7 @@ $dispatcher = FastRoute\cachedDispatcher(function (FastRoute\RouteCollector $r) 
     },
     [
         'cacheFile' => 'storage/cache/routes.php',
-        'cacheDisabled' => true,
+        'cacheDisabled' => !($_ENV['ENVIRONMENT'] === 'production'),
     ]
 );
 

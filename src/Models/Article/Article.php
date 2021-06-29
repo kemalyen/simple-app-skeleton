@@ -22,18 +22,75 @@ class Article
         $this->content = $content;
     }
 
-    public function getId()
+    /**
+     * Set title.
+     *
+     * @param string|null $title
+     *
+     * @return Article
+     */
+    public function setTitle($title = null) : self
     {
-        return $this->id;
+        $this->title = $title;
+        
+        return $this;
     }
-
-    public function getTitle()
+    
+    /**
+     * Get title.
+     *
+     * @return string|null
+     */
+    public function getTitle() : ?string
     {
         return $this->title;
     }
-
-    public function getContent()
+    
+    /**
+     * Set content.
+     *
+     * @param string|null $content
+     *
+     * @return Article
+     */
+    public function setContent($content = null) : self
+    {
+        $this->content = $content;
+        
+        return $this;
+    }
+    
+    /**
+     * Get content.
+     *
+     * @return string|null
+     */
+    public function getContent() : ?string
     {
         return $this->content;
+    }
+    
+    /**
+     * Set id.
+     *
+     * @param string $id
+     *
+     * @return Article
+     */
+    public function setId(Uuid $id) : self
+    {
+        $this->id = $id;
+        
+        return $this;
+    }
+    
+    /**
+     * Get id.
+     *
+     * @return Uuid
+     */
+    public function getId() : Uuid
+    {
+        return $this->id;
     }
 }

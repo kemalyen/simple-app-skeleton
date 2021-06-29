@@ -8,6 +8,8 @@
 
 # Temporary files
 /storage/cache/templates/**/*.php
+/storage/cache/routes.php
+/schema
 
 # Managed by Composer
 /vendor/

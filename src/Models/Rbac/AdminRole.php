@@ -8,7 +8,7 @@ use Laminas\Permissions\Rbac\Role;
 
 final class AdminRole extends Role
 {
-    public function __construct(User $user)
+    public function __construct()
     {
         // home
         $this->addPermission('home');

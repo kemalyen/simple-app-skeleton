@@ -33,6 +33,8 @@ return [
             'emailAddress'      => Teuton\Simple\Models\DBAL\EmailAddressType::class,
             'passwordHash'      => Teuton\Simple\Models\DBAL\PasswordHashType::class,
             'role'              => Teuton\Simple\Models\DBAL\RoleType::class,
+            'uuid'              => \Ramsey\Uuid\Doctrine\UuidType::class,
+            'uuid_binary'       => \Ramsey\Uuid\Doctrine\UuidBinaryType::class,
         ]
     ],
     'doctrine.mapping.paths' => ['config/doctrine'],

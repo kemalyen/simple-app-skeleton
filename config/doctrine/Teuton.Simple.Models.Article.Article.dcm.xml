@@ -8,7 +8,9 @@
         <option name="collate">utf8mb4_unicode_ci</option>
     </options>
 
-    <id name="id" type="guid" column="id">
+    <id name="id" type="uuid_binary" column="id" unique="true" nullable="false">
+        <generator strategy="CUSTOM" />
+        <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator" />
     </id>
     <field name="title" column="title" type="text" nullable="true" />
     <field name="content" column="content" type="text" nullable="true" />

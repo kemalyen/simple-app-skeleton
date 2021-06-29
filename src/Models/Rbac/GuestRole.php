@@ -1,9 +1,10 @@
 <?php
 declare(strict_types = 1);
 
-namespace SepMonitor\Infrastructure\Rbac;
+namespace Teuton\Simple\Models\Rbac;
 
-use Zend\Permissions\Rbac\AbstractRole;
+use Teuton\Simple\Models\User\User;
+use Laminas\Permissions\Rbac\Role;
 
 final class GuestRole extends AbstractRole
 {

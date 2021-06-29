@@ -1,0 +1,28 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <!-- A User is defined in your application logic, outside of PHP-RBAC. PHP-RBAC uses the User's Id to make Role assignments.
+    Note: When we mention 'Entity' we mean either a Role or Permission.  -->
+	<entity name="Teuton\Simple\Models\User\User" table="users">
+	    <options>
+	        <option name="charset">utf8mb4</option>
+	        <option name="collate">utf8mb4_unicode_ci</option>
+	    </options>
+	    <id name="id" type="guid" column="id" nullable="false"></id>
+	    <field name="emailAddress" type="emailAddress" unique="true" nullable="false" />
+        <field name="passwordHash" type="passwordHash" unique="true" nullable="false" />
+        <field name="role" type="role" nullable="false"/>
+        <field name="firstName" nullable="true"/>
+        <field name="lastName"/>
+        <field name="resetToken" type="string" nullable="true" />
+        <field name="resetTokenExpiresAt" type="datetime" nullable="true" />
+        <field name="isActive" type="boolean" nullable="false">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="createdAt" type="datetime" nullable="false" />
+        <field name="modifiedAt" type="datetime" nullable="true" />
+	</entity>
+</doctrine-mapping>

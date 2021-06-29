@@ -1,0 +1,66 @@
+{
+	"name" : "vardumper/simple",
+	"description" : "Simple MVC structure using FastRoute, Dice DI, Twig and Doctrine",
+	"type" : "project",
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "https://packagist.org/"
+		}
+	],
+	"keywords" : [
+		"mvc",
+		"cms"
+	],
+	"license" : "GPL-2.0+",
+	"authors" : [{
+			"name" : "Erik Pöhler",
+			"email" : "support@teuton.mx",
+			"role" : "Lead Developer"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Teuton\\Simple\\" : "src"
+		}
+	},
+	"require" : {
+		"php" : ">=7.4.0",
+		"ext-curl" : "*",
+		"ext-dom" : "*",
+		"ext-json" : "*",
+		"ext-mbstring" : "*",
+		"ext-openssl" : "*",
+		"ext-pcre" : "*",
+		"ext-pdo" : "*",
+		"ext-zip" : "*",
+		"ramsey/uuid" : "^3.9",
+		"rosell-dk/webp-convert" : "^2.6",
+		"symfony/http-foundation" : "^5.3",
+		"nikic/fast-route" : "^1.3",
+		"twig/twig" : "^3.0",
+		"vlucas/phpdotenv" : "^5.3",
+		"twig/extra-bundle" : "^3.0",
+		"twig/intl-extra" : "^3.0",
+		"php-di/php-di" : "^6.3",
+		"monolog/monolog" : "^2.2",
+		"doctrine/orm" : "^2.9",
+		"laminas/laminas-permissions-rbac" : "^3.1",
+		"laminas/laminas-form": "^3.0",
+		"mnapoli/silly": "^1.7"
+	},
+	"homepage" : "https://teuton.mx",
+	"require-dev" : {
+		"filp/whoops" : "^2.13",
+		"phpmd/phpmd" : "^2.10",
+		"squizlabs/php_codesniffer" : "^3.6"
+	},
+	"scripts" : {
+		"serve" : "@php -S localhost:8000 -t public/"
+	},
+	"config" : {
+		"optimize-autoloader" : true,
+		"platform" : {
+			"php" : "8.0"
+		}
+	}
+}

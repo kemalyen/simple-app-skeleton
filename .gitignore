@@ -1,0 +1,12 @@
+# Managed by Composer
+/vendor/
+
+# Assets and user uploads
+/public/assets/
+/public/uploads/
+
+# PHPUnit
+/phpunit.xml
+
+# Composer PHAR
+/composer.phar

@@ -6,6 +6,9 @@
 # .env
 /.env
 
+# Temporary files
+/storage/cache/templates/**/*.php
+
 # Managed by Composer
 /vendor/
 

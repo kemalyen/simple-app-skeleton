@@ -1,3 +1,11 @@
+# IDE related
+/.settings
+/.buildpath
+/.project
+
+# .env
+/.env
+
 # Managed by Composer
 /vendor/
 

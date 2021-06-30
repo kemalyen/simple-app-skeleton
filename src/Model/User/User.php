@@ -2,11 +2,13 @@
 
 namespace Teuton\Simple\Model\User;
 
+use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 use RandomLib\Factory;
 use SecurityLib\Strength;
 use \Teuton\Simple\Model\Generic\EmailAddress;
 use \Teuton\Simple\Model\Generic\PasswordHash;
+use Doctrine\DBAL\Types\DateTimeImmutableType;
 
 class User {
     
@@ -46,22 +48,27 @@ class User {
     private $resetToken;
     
     /**
-     * @var \DateTimeImmutable
+     * @var DateTimeImmutable
      */
     private $resetTokenExpiresAt;
+    
+    /** @var Message[] */
+    private $messages;
     
     /**
      * @var bool
      */
     private $isActive;
     
+    /** @var DateTimeImmutable */
+    private $activatedAt;
     /**
-     * @var \DateTimeImmutable
+     * @var DateTimeImmutable
      */
     private $createdAt;
     
     /**
-     * @var \DateTimeImmutable
+     * @var DateTimeImmutable
      */
     private $modifiedAt;
     

@@ -6,7 +6,7 @@ namespace Teuton\Simple\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Teuton\Simple\Interfaces\SearchArticlesInterface;
+use Teuton\Simple\Service\Article\SearchArticlesInterface;
 use Teuton\Simple\Form\LoginForm;
 use Twig\Environment;
 

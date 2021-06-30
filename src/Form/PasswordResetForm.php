@@ -9,6 +9,12 @@ class PasswordResetForm extends Form {
     
     public function __contruct()
     {
-        parent::init()
+        parent::__construct(self::NAME);
+        
+        $this->add( new Element\Password('password') );
+        $this->add( new Element\Password('password-repeat') );
+        
+        $this->add( new Element\Csrf('security') );
+        $this->add( new Element\Submit('send') );
     }
 }

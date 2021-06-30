@@ -18,7 +18,7 @@ use Teuton\Simple\Services\SearchArticles;
 use Teuton\Simple\Interfaces\SearchArticlesInterface;
 
 return [
-    SearchArticlesInterface::class => get(SearchArticles::class),
+    \Teuton\Simple\Service\Article\SearchArticlesInterface::class => get(\Teuton\Simple\Service\Article\SearchArticles::class),
     
     EntityManager::class => factory([EntityManager::class, 'create'])
     ->parameter('connection', get('db.params'))

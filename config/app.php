@@ -1,9 +1,5 @@
 <?php declare(strict_types = 1);
 
-error_reporting(E_ALL);
-@ini_set('display_errors', '1');
-@ini_set('display_startup_errors', '1');
-
 /**
  * Routes
  *
@@ -36,7 +32,7 @@ $dispatcher = FastRoute\cachedDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/', \Teuton\Simple\Controller\IndexController::class);
         $r->addRoute(['GET','POST'], '/login', \Teuton\Simple\Controller\IndexController::class);
         $r->addRoute('GET', '/activate/{token:[A-Za-z0-9\-\.$=]+}', \Teuton\Simple\Controller\User\ActivationController::class);
-        $r->addRoute('GET', '/', \Teuton\Simple\Controller\IndexController::class);
+        $r->addRoute(['GET','POST'], '/register', \Teuton\Simple\Controller\User\RegistrationController::class);
     },
     [
         'cacheFile' => 'storage/cache/routes.php',
@@ -53,11 +49,11 @@ $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI
 
 switch ($route[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        $container->call([\Teuton\Simple\Controllers\ErrorController::class, 'notFound'])->send();
+        $container->call([\Teuton\Simple\Controller\ErrorController::class, 'notFound'])->send();
         break;
         
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-        $container->call([\Teuton\Simple\Controllers\ErrorController::class, 'methodNotAllowed'])->send();
+        $container->call([\Teuton\Simple\Controller\ErrorController::class, 'methodNotAllowed'])->send();
         break;
 
     case FastRoute\Dispatcher::FOUND:
@@ -69,7 +65,7 @@ switch ($route[0]) {
             if ($whoops) {
                 $whoops->handleException($e);
             }
-            $container->call([\Teuton\Simple\Controllers\ErrorController::class, 'exception'])->send();
+            $container->call([\Teuton\Simple\Controller\ErrorController::class, 'exception'])->send();
         }
         break;
 }
